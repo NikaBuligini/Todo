@@ -1,0 +1,20 @@
+root: true
+
+env:
+    mocha: true
+    node: true
+
+extends: standard
+
+plugins:
+  - standard
+  - promise
+  - react
+  - mocha
+
+rules:
+  react/jsx-uses-react: error
+  react/jsx-uses-vars: error
+
+globals:
+  __DEV__: true
