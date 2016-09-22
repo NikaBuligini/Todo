@@ -5,13 +5,15 @@ import Provider from 'react-redux'
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
   ActivityIndicator,
   DrawerLayoutAndroid
 } from 'react-native'
+
+import Navigation from './containers/Navigation'
+import Todo from './containers/Todo'
 
 type State = { animating: boolean; }
 type Timer = number
@@ -43,18 +45,15 @@ export default class Root extends Component {
   }
 
   render () {
-    var navigationView = (
-      <View style={{flex: 1, backgroundColor: '#fff'}}>
-        <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer!</Text>
-      </View>
-    )
-
     return (
       <DrawerLayoutAndroid
         drawerWidth={300}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => navigationView}>
-        <View style={styles.container}>
+        renderNavigationView={() => <Navigation />}>
+
+        <Todo />
+
+        {/* <View style={styles.container}>
           <ActivityIndicator
             animating={this.state.animating}
             style={[styles.centering, {height: 80}]}
@@ -70,7 +69,7 @@ export default class Root extends Component {
             Double tap R on your keyboard to reload,{'\n'}
             Shake or press menu button for dev menu
           </Text>
-        </View>
+        </View> */}
       </DrawerLayoutAndroid>
     );
   }
