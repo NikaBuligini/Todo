@@ -1,5 +1,8 @@
 'use strict';
 
 module.exports = {
-  serverURL: 'http://localhost:8080'
-}
+  testMenuEnabled: true,
+  serverURL: 'http://localhost:8080',
+  version: 323,
+  fontFamily: undefined,
+};

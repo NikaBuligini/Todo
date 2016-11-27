@@ -1,25 +1,17 @@
-import * as ActionTypes from '../actions'
-import { combineReducers } from 'redux'
+'use strict';
 
-function todos (state = {}, action) {
-  return state
-}
+import { combineReducers } from 'redux';
 
-function errorMessage (state = null, action) {
-  const { type, error } = action
-
-  if (type === ActionTypes.RESET_ERROR_MESSAGE) {
-    return null
-  } else if (error) {
-    return action.error
-  }
-
-  return state
-}
-
-const reducer = combineReducers({
-  todos,
-  errorMessage
-})
-
-export default reducer
+module.exports = combineReducers({
+  config: require('./config'),
+  // notifications: require('./notifications'),
+  // maps: require('./maps'),
+  // sessions: require('./sessions'),
+  // user: require('./user'),
+  // schedule: require('./schedule'),
+  // topics: require('./topics'),
+  // filter: require('./filter'),
+  // navigation: require('./navigation'),
+  // friendsSchedules: require('./friendsSchedules'),
+  // surveys: require('./surveys'),
+});

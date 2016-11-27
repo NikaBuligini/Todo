@@ -4,19 +4,9 @@
  * @flow
  */
 
-import React from 'react'
-import { Provider } from 'react-redux'
-import configureStore from './app/configureStore'
-import Root from './app/Root'
+ 'use strict';
 
-const store = configureStore({})
+ const { AppRegistry } = require('react-native');
+ const setup = require('./app/setup');
 
-import { AppRegistry } from 'react-native'
-
-const App = () => (
-  <Provider store={store}>
-    <Root />
-  </Provider>
-)
-
-AppRegistry.registerComponent('Todo', () => App)
+ AppRegistry.registerComponent('Todo', setup);
